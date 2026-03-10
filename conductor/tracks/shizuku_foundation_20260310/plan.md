@@ -7,10 +7,10 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Shizuku Service Detection and Permission Handshake' (Protocol in workflow.md)
 
 ## Phase 2: Tooie Local API Core Setup
-- [ ] Task: Integrate a lightweight HTTP server (e.g., NanoHTTPD or Ktor) into the `app` module.
-- [ ] Task: Define the core API architecture and base routing for the Tooie Local API.
-- [ ] Task: Write tests to ensure the local HTTP server starts and responds correctly.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Tooie Local API Core Setup' (Protocol in workflow.md)
+- [x] Task: Integrate a lightweight HTTP server (e.g., NanoHTTPD or Ktor) into the `app` module. [02abca4]
+- [x] Task: Define the core API architecture and base routing for the Tooie Local API. [02abca4]
+- [x] Task: Write tests to ensure the local HTTP server starts and responds correctly. [b855ca0]
+- [~] Task: Conductor - User Manual Verification 'Phase 2: Tooie Local API Core Setup' (Protocol in workflow.md)
 
 ## Phase 3: Status Endpoint Implementation
 - [ ] Task: Implement the `GET /v1/status` endpoint to expose app and Shizuku status information.
