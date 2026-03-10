@@ -9,7 +9,7 @@
 ## Phase 2: Dependency and Ecosystem Mapping
 - [x] Task: Create a dependency map of internal modules (`app`, `native-entrypoint`, `terminal-emulator`, `terminal-view`, `termux-am-library`, `termux-shared`). [9f460e6]
 - [x] Task: Map the inter-repo links for the "Tooie" project, identifying which repositories provide specific functionalities. [9a04e69]
-- [ ] Task: Document the versioning or linking strategy used between these repositories (e.g., git submodules, Gradle dependencies, local builds).
+- [x] Task: Document the versioning or linking strategy used between these repositories (e.g., git submodules, Gradle dependencies, local builds). [da2acd1]
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Dependency and Ecosystem Mapping' (Protocol in workflow.md)
 
 ## Phase 3: Build and Deployment Documentation
