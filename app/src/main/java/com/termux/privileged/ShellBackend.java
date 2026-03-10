@@ -73,6 +73,11 @@ public class ShellBackend implements PrivilegedBackend {
     }
     
     @Override
+    public int getVersion() {
+        return -1;
+    }
+    
+    @Override
     public Type getType() {
         return Type.SHELL;
     }

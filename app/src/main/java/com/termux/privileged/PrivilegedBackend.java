@@ -36,6 +36,12 @@ public interface PrivilegedBackend {
     CompletableFuture<Boolean> initialize(Context context);
     
     /**
+     * Get the backend version (e.g., Shizuku version)
+     * @return Version integer, or -1 if not applicable
+     */
+    int getVersion();
+
+    /**
      * Check if the backend is available and ready for use
      * @return true if backend is operational
      */

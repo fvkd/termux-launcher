@@ -119,6 +119,14 @@ public class ShizukuBackend implements PrivilegedBackend {
     }
     
     @Override
+    public int getVersion() {
+        if (isAvailable()) {
+            return Shizuku.getVersion();
+        }
+        return -1;
+    }
+    
+    @Override
     public Type getType() {
         return Type.SHIZUKU;
     }
