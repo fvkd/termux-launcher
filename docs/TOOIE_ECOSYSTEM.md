@@ -29,7 +29,15 @@ The "Tooie" project is a multi-repo ecosystem designed for a modular and special
     - Python-based automation for interacting with the Tooie Local API.
 - **Boundary:** These are high-level automation artifacts that consume the APIs provided by the `termux-launcher-shizuku` app.
 
-## Inter-Repo Communication
+## Inter-Repo Links and Functionalities
+
+| Repository | Primary Functionality | Provided Service/API | Consumed Service/API |
+| --- | --- | --- | --- |
+| `termux-launcher-shizuku` | Android UI & API Bridge | Tooie Local API (localhost) | Shizuku Manager API |
+| `tooie-shell-config` | Shell & TUI Configuration | Shell Environment, Aliases | Tooie Local API (via `curl/python`) |
+| `tooie-automation` | System-wide Automation | Automated Flows, Shortcuts | Tooie Local API, Android Intent API |
+
+## Communication Channels
 
 - **Local API:** The `termux-launcher-shizuku` app provides a REST-like API (Tooie Local API) at `localhost` that other scripts and apps (from `tooie-shell-config` or `tooie-automation`) can consume.
 - **Shizuku:** Acts as the cross-process bridge between the `termux-launcher-shizuku` app and the Android system server, enabling privileged operations.
