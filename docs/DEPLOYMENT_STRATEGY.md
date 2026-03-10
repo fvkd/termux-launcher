@@ -30,12 +30,28 @@ The `shizuku-integration` variant requires additional steps for full functionali
 2.  **Grant Permissions:** Upon first launch, the `termux-launcher-shizuku` app will request privileged access via the Shizuku manager. The user must explicitly grant this permission.
 3.  **Local API Activation:** Once permission is granted, the Tooie Local API (localhost) will become active and available for other ecosystem components (like shell scripts).
 
-## Versioning Strategy
+## Shizuku Integration and Usage
 
-- **Nightly Builds:** Development builds are automatically versioned with the commit hash and timestamp.
-- **Releases:** Formal releases are tagged in git and use a semantic versioning scheme (e.g., `v1.2.0`).
+### 1. Overview
+Shizuku is used as the cross-process bridge between the `termux-launcher-shizuku` app and the Android system server. It allows the app to execute privileged commands and access system-level data (like media control, notifications, and hardware metrics) that would otherwise require root access or complex ADB workarounds.
 
-## Deployment Summary
+### 2. Requirements for Successful Deployment
+To ensure a successful deployment with Shizuku features:
+- **Device Compatibility:** Works on unrooted Android devices (Android 6.0+).
+- **Shizuku App:** Must be installed (available on F-Droid or Play Store).
+- **Activation:** Shizuku service must be started on the device. This can be done via:
+    - **Wireless Debugging (Android 11+):** The most common and convenient method.
+    - **ADB (Android 6.0+):** Requires a computer and the command `adb shell sh /sdcard/Android/data/moe.shizuku.privileged.api/files/start.sh`.
+    - **Root (Optional):** Shizuku can also run with root privileges.
+- **App Permission:** The `termux-launcher-shizuku` app must be authorized within the Shizuku manager.
+
+### 3. Usage within the Tooie API
+The Tooie Local API exposes several Shizuku-powered endpoints. For example:
+- **`/v1/privileged/request-permission`:** Triggers the Shizuku permission dialog.
+- **`/v1/system/resources`:** Uses Shizuku to gather low-level hardware metrics (e.g., CPU load per core, battery thermal state).
+- **`/v1/exec`:** Uses Shizuku to execute system commands that require higher privileges than a standard Android app.
+
+## Summary
 
 1.  **Developer Pushes Code:** Triggers GitHub Action.
 2.  **GitHub Action Builds APK:** Generates non-Shizuku and Shizuku variants.
