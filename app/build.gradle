@@ -114,6 +114,9 @@ android {
 }
 
 dependencies {
+    // Shizuku dependencies for privileged operations
+    implementation "dev.rikka.shizuku:api:13.1.5"
+    implementation "dev.rikka.shizuku:provider:13.1.5"
     implementation "androidx.annotation:annotation:1.8.0"
     implementation "androidx.core:core:1.13.1"
     implementation "androidx.drawerlayout:drawerlayout:1.2.0"

@@ -115,9 +115,38 @@ public final class AppShell {
         Logger.logDebugExtended(LOG_TAG, ExecutionCommand.getExecutionInputLogString(executionCommand, true, Logger.shouldEnableLoggingForCustomLogLevel(executionCommand.backgroundCustomLogLevel)));
         Logger.logVerboseExtended(LOG_TAG, "\"" + executionCommand.getCommandIdAndLabelLogString() + "\" AppShell Environment:\n" + Joiner.on("\n").join(environmentArray));
         // Exec the process
-        Process process;
+        Process process = null;
         try {
-            process = Runtime.getRuntime().exec(commandArray, environmentArray, new File(executionCommand.workingDirectory));
+            boolean useShizuku = false;
+            // Check if we should use Shizuku for termux-api calls
+            if (executableBasename != null && executableBasename.contains("termux-api")) {
+                try {
+                    Class<?> shizukuClass = Class.forName("rikka.shizuku.Shizuku");
+                    java.lang.reflect.Method pingBinderMethod = shizukuClass.getDeclaredMethod("pingBinder");
+                    boolean binderAlive = (boolean) pingBinderMethod.invoke(null);
+                    
+                    java.lang.reflect.Method checkPermissionMethod = shizukuClass.getDeclaredMethod("checkSelfPermission");
+                    int permission = (int) checkPermissionMethod.invoke(null);
+                    boolean hasPermission = (permission == android.content.pm.PackageManager.PERMISSION_GRANTED);
+                    
+                    if (binderAlive && hasPermission) {
+                        java.lang.reflect.Method newProcessMethod = shizukuClass.getDeclaredMethod("newProcess", String[].class, String[].class, String.class);
+                        newProcessMethod.setAccessible(true);
+                        Object processObject = newProcessMethod.invoke(null, commandArray, environmentArray, executionCommand.workingDirectory);
+                        if (processObject instanceof Process) {
+                            process = (Process) processObject;
+                            useShizuku = true;
+                            Logger.logInfo(LOG_TAG, "Successfully launched termux-api via Shizuku");
+                        }
+                    }
+                } catch (Exception e) {
+                    Logger.logWarn(LOG_TAG, "Failed to use Shizuku for termux-api, falling back to standard exec: " + e.getMessage());
+                }
+            }
+            
+            if (!useShizuku) {
+                process = Runtime.getRuntime().exec(commandArray, environmentArray, new File(executionCommand.workingDirectory));
+            }
         } catch (IOException e) {
             String[] wrappedCommandArray = getSystemLinkerWrappedCommand(commandArray, environment, e);
             if (wrappedCommandArray == null) {
