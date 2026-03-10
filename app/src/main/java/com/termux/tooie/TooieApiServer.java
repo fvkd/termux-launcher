@@ -237,6 +237,7 @@ public class TooieApiServer {
         data.put("apiVersion", API_VERSION);
         data.put("backendType", String.valueOf(manager.getBackendType()));
         data.put("backendState", String.valueOf(manager.getBackendState()));
+        data.put("backendVersion", manager.getVersion());
         data.put("statusReason", String.valueOf(manager.getStatusReason()));
         data.put("statusMessage", manager.getStatusMessage());
         data.put("isPrivilegedAvailable", manager.isPrivilegedAvailable());
