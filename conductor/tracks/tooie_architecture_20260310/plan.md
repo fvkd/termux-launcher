@@ -7,7 +7,7 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Project Scope and Repository Definition' (Protocol in workflow.md)
 
 ## Phase 2: Dependency and Ecosystem Mapping
-- [ ] Task: Create a dependency map of internal modules (`app`, `native-entrypoint`, `terminal-emulator`, `terminal-view`, `termux-am-library`, `termux-shared`).
+- [x] Task: Create a dependency map of internal modules (`app`, `native-entrypoint`, `terminal-emulator`, `terminal-view`, `termux-am-library`, `termux-shared`). [9f460e6]
 - [ ] Task: Map the inter-repo links for the "Tooie" project, identifying which repositories provide specific functionalities.
 - [ ] Task: Document the versioning or linking strategy used between these repositories (e.g., git submodules, Gradle dependencies, local builds).
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Dependency and Ecosystem Mapping' (Protocol in workflow.md)
