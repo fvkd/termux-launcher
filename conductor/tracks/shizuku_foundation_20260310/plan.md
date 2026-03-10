@@ -12,8 +12,8 @@
 - [x] Task: Write tests to ensure the local HTTP server starts and responds correctly. [b855ca0]
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Tooie Local API Core Setup' (Protocol in workflow.md)
 
-## Phase 3: Status Endpoint Implementation
+## Phase 3: Status Endpoint Implementation [checkpoint: 0472d04]
 - [x] Task: Implement the `GET /v1/status` endpoint to expose app and Shizuku status information. [5e627de]
 - [x] Task: Create unit tests to verify the JSON structure and content of the `/v1/status` response. [daeacc1]
 - [x] Task: Integrate the status endpoint into the main API routing. [5e627de]
-- [~] Task: Conductor - User Manual Verification 'Phase 3: Status Endpoint Implementation' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Status Endpoint Implementation' (Protocol in workflow.md)
