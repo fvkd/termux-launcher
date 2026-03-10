@@ -14,6 +14,6 @@
 
 ## Phase 3: Build and Deployment Documentation
 - [x] Task: Define and document the correct build order for all "Tooie" repositories and their internal modules. [b0989b7]
-- [ ] Task: Document the deployment strategy, including APK generation for non-Shizuku and Shizuku-integration builds.
+- [x] Task: Document the deployment strategy, including APK generation for non-Shizuku and Shizuku-integration builds. [6f1cc48]
 - [ ] Task: Specify how Shizuku is used and the requirements for a successful deployment (e.g., Shizuku installation, permission granting).
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Build and Deployment Documentation' (Protocol in workflow.md)
