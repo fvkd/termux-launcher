@@ -292,6 +292,10 @@ public class PrivilegedBackendManager {
         return currentBackend != null ? currentBackend.getType() : PrivilegedBackend.Type.NONE;
     }
 
+    public int getVersion() {
+        return currentBackend != null ? currentBackend.getVersion() : -1;
+    }
+
     public boolean requestPrivilegedPermission(int requestCode) {
         if (!isMasterEnabled()) {
             updateState(BackendState.UNAVAILABLE, StatusReason.UNAVAILABLE,
@@ -401,6 +405,11 @@ public class PrivilegedBackendManager {
         @Override
         public boolean isAvailable() {
             return false;
+        }
+
+        @Override
+        public int getVersion() {
+            return -1;
         }
 
         @Override
