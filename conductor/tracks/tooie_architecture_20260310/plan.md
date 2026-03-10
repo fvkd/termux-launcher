@@ -12,8 +12,8 @@
 - [x] Task: Document the versioning or linking strategy used between these repositories (e.g., git submodules, Gradle dependencies, local builds). [da2acd1]
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Dependency and Ecosystem Mapping' (Protocol in workflow.md)
 
-## Phase 3: Build and Deployment Documentation
+## Phase 3: Build and Deployment Documentation [checkpoint: 8b3bf70]
 - [x] Task: Define and document the correct build order for all "Tooie" repositories and their internal modules. [b0989b7]
 - [x] Task: Document the deployment strategy, including APK generation for non-Shizuku and Shizuku-integration builds. [6f1cc48]
 - [x] Task: Specify how Shizuku is used and the requirements for a successful deployment (e.g., Shizuku installation, permission granting). [96d0e11]
-- [~] Task: Conductor - User Manual Verification 'Phase 3: Build and Deployment Documentation' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Build and Deployment Documentation' (Protocol in workflow.md)
