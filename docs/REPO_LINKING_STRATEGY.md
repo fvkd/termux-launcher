@@ -23,9 +23,20 @@ The connection between `termux-launcher-shizuku`, `tooie-shell-config`, and `too
 - **Consumption:** `tooie-shell-config` (via shell scripts/Python) and `tooie-automation` (via Tasker/Automate) consume the API exposed by the `termux-launcher-shizuku` app at `localhost`.
 - **Versioning Strategy:** The Local API follows a semantic versioning approach (e.g., `/v1/`). This ensures that shell configurations and automations remain compatible with older versions of the app as the project evolves.
 
-### 3. Build-Time Integration (CI/CD)
-- **Mechanism:** GitHub Actions workflows are used to trigger builds and generate artifacts independently.
-- **Cross-Repo Triggers:** (Optional/Future) Using repository dispatch events to trigger builds in dependent repositories when a core component changes.
+## Build and Dependency Order
+
+### 1. Internal Build Order (Automatic)
+Gradle automatically determines the correct build order based on the `implementation project()` dependencies.
+1. `native-entrypoint`, `terminal-emulator`, `termux-am-library` (No dependencies)
+2. `terminal-view` (Depends on `terminal-emulator`)
+3. `termux-shared` (Depends on `terminal-view`, `termux-am-library`)
+4. `app` (Depends on `terminal-view`, `termux-shared`, `native-entrypoint`)
+
+### 2. Ecosystem Build Order (Manual/CI)
+Since repositories are independent, the "build order" refers to the sequence required for a complete deployment.
+1. **`termux-launcher-shizuku`:** Build and install the Android APK (provides the API).
+2. **`tooie-shell-config`:** Sync dotfiles into the Termux `$HOME` (uses the API).
+3. **`tooie-automation`:** Import Tasker/Automate flows (consumes the API).
 
 ## Summary
 
