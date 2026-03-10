@@ -1,7 +1,7 @@
 # Track Plan: Project Architecture & Ecosystem Documentation
 
 ## Phase 1: Project Scope and Repository Definition
-- [ ] Task: Document the repository's core purpose and scope in a new `docs/REPO_SCOPE.md` file.
+- [x] Task: Document the repository's core purpose and scope in a new `docs/REPO_SCOPE.md` file. [a37434f]
 - [ ] Task: Identify and list all key modules within the `termux-launcher-shizuku` repository.
 - [ ] Task: Define the boundaries between this repository and other "Tooie" project repositories.
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Project Scope and Repository Definition' (Protocol in workflow.md)
