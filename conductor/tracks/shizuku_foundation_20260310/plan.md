@@ -1,10 +1,10 @@
 # Track Plan: Shizuku Integration & API Foundation
 
 ## Phase 1: Shizuku Service Detection and Permission Handshake
-- [ ] Task: Implement Shizuku detection logic to verify if the service is running and its version.
-- [ ] Task: Create a mechanism for the app to request Shizuku permissions from the user.
-- [ ] Task: Write tests to verify the Shizuku detection and permission handling logic.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Shizuku Service Detection and Permission Handshake' (Protocol in workflow.md)
+- [x] Task: Implement Shizuku detection logic to verify if the service is running and its version. [c845803]
+- [x] Task: Create a mechanism for the app to request Shizuku permissions from the user. [02abca4]
+- [x] Task: Write tests to verify the Shizuku detection and permission handling logic. [c8905ca]
+- [~] Task: Conductor - User Manual Verification 'Phase 1: Shizuku Service Detection and Permission Handshake' (Protocol in workflow.md)
 
 ## Phase 2: Tooie Local API Core Setup
 - [ ] Task: Integrate a lightweight HTTP server (e.g., NanoHTTPD or Ktor) into the `app` module.

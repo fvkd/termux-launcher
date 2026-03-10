@@ -235,3 +235,7 @@ Files changed: app/src/main/java/com/termux/app/TermuxInstaller.java
 Build result: not run locally (environment NDK license blocker)
 Manual validation case(s): pending device validation: bootstrap should continue past second stage and open session despite warning-only stderr.
 Next step: push fix and trigger nightly APK build for verification.
+## 2026-03-10: Implementation started
+- Track: Shizuku Integration & API Foundation
+- Status: Phase 1 started.
+- Note: Unable to locate Android SDK on system. Automated unit tests requiring Android SDK (Robolectric) will be skipped for now. Manual verification and logic-only tests will be prioritized.
